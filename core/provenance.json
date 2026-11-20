@@ -1,0 +1,8 @@
+{
+  "source": "src/sira/research_contracts.py",
+  "commit": "c949a7f272316d2196e9b46f1770302983bad41a",
+  "sha256": "849f953abd876e016932c961c90b76282a935fa53ff4007a9337094143290ad7",
+  "purpose": "Bounded research requests and provider-result validation",
+  "source_project": "Original SIRA codebase",
+  "reuse_scope": "Request/result contracts only; the complete SIRA runtime was not copied."
+}

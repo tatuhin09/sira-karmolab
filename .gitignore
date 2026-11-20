@@ -1,0 +1,14 @@
+runtime/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+*.sqlite*
+*.db
+submission/
+*.mp4
+*.pdf
+.DS_Store

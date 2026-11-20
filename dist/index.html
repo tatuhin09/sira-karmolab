@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="সিরা কর্মল্যাবে বাস্তব কাজের পরিস্থিতিতে গ্রাহকসেবার সিদ্ধান্ত অনুশীলন করুন।">
+<title>সিরা কর্মল্যাব | SIRA Karmolab</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+ <a class="brand" href="#home" aria-label="SIRA Karmolab"><img src="logo.png" width="44" height="44" alt=""><span><b data-copy="brand"></b><small data-copy="brandLine"></small></span></a>
+ <nav aria-label="Main navigation"><a href="#practice" data-copy="practiceNav"></a><a href="#how" data-copy="howNav"></a><a href="#history" id="history-link">আমার কাজ</a></nav>
+ <div class="header-actions"><button id="language" class="language" type="button">English</button><a class="button small" href="#practice" data-copy="start"></a></div>
+</header>
+<main id="home-view">
+ <section class="hero content">
+  <div class="hero-copy">
+   <p class="eyebrow" data-copy="eyebrow"></p>
+   <h1><span data-copy="headline1"></span><br><em data-copy="headline2"></em></h1>
+   <p class="hero-description" data-copy="description"></p>
+   <div class="hero-actions"><a class="button" href="#practice" data-copy="heroStart"></a><a class="text-link" href="#how" data-copy="seeHow"></a></div>
+   <div class="audience"><span class="stack" aria-hidden="true"><i>শ</i><i>প্র</i></span><p data-copy="audience"></p></div>
+  </div>
+  <div class="preview" aria-label="Practice preview">
+   <div class="preview-top"><span class="mini-logo">ক</span><b data-copy="previewHeading"></b><span class="sample" data-copy="sample"></span></div>
+   <div class="customer-row"><span class="avatar">ম</span><div><b data-copy="customer"></b><small data-copy="channel"></small></div></div>
+   <p class="bubble" data-copy="case1"></p>
+   <div class="preview-answer"><span data-copy="exampleAnswer"></span><p data-copy="badAnswer"></p></div>
+   <div class="coaching"><span class="coach-icon" aria-hidden="true">✦</span><div><b data-copy="notice"></b><p data-copy="noticeText"></p><span class="source" data-copy="source"></span></div></div>
+   <div class="preview-bottom"><span data-copy="practiceFocus"></span><b data-copy="focus"></b></div>
+  </div>
+ </section>
+ <div class="promise-bar"><div class="content promises"><span data-copy="promise1"></span><span data-copy="promise2"></span><span data-copy="promise3"></span></div></div>
+ <section class="content how-section" id="how">
+  <div class="section-heading"><div><p class="eyebrow" data-copy="processEyebrow"></p><h2 data-copy="processTitle"></h2></div><p data-copy="processIntro"></p></div>
+  <div class="process-grid">
+   <article><span class="feature-icon" aria-hidden="true">▤</span><h3 data-copy="step1Title"></h3><p data-copy="step1Text"></p></article>
+   <article><span class="feature-icon" aria-hidden="true">✦</span><h3 data-copy="step2Title"></h3><p data-copy="step2Text"></p></article>
+   <article><span class="feature-icon" aria-hidden="true">✓</span><h3 data-copy="step3Title"></h3><p data-copy="step3Text"></p></article>
+  </div>
+ </section>
+ <section class="content course-section">
+  <div><p class="eyebrow" data-copy="courseEyebrow"></p><h2 data-copy="courseTitle"></h2><p data-copy="courseText"></p></div>
+  <a href="#practice" class="course-card"><span class="course-icon" aria-hidden="true">ক</span><div><span class="meta" data-copy="courseMeta"></span><h3 data-copy="courseName"></h3><p data-copy="courseDetails"></p><b data-copy="openPractice"></b></div></a>
+ </section>
+</main>
+<main id="practice-view" class="content practice-view" hidden>
+ <a href="#home" class="back-link" data-copy="back"></a>
+ <div class="workspace-heading"><div><p class="eyebrow" data-copy="courseEyebrow"></p><h1 data-copy="courseName"></h1></div><span class="sample" data-copy="sample"></span></div>
+ <ol class="progress" aria-label="Practice progress"><li data-copy="progress1"></li><li data-copy="progress2"></li><li data-copy="progress3"></li></ol>
+ <div class="workspace">
+  <section class="practice-card" aria-label="Exercise"><div id="exercise"></div></section>
+  <aside class="policy-panel">
+   <div class="policy-heading"><span class="feature-icon" aria-hidden="true">▤</span><div><span class="meta" data-copy="policyMeta"></span><h2 data-copy="policyTitle"></h2></div></div>
+   <div class="policy-rule"><b data-copy="rule1Title"></b><p data-copy="rule1Text"></p></div>
+   <div class="policy-rule"><b data-copy="rule2Title"></b><p data-copy="rule2Text"></p></div>
+   <div class="policy-rule"><b data-copy="rule3Title"></b><p data-copy="rule3Text"></p></div>
+   <p class="method" data-copy="method"></p>
+  </aside>
+ </div>
+</main>
+<main id="history-view" class="content practice-view" hidden><div id="history-content"></div></main>
+<footer class="content footer"><span data-copy="footerBrand"></span><p data-copy="footerNote"></p></footer>
+</body></html>
