@@ -1,6 +1,8 @@
-# Local API
+# Application API
 
-Base URL with the launcher: `http://127.0.0.1:8767`. Only matching localhost/127.0.0.1 Host values are accepted. These are local application APIs, not public MCP tools.
+Hosted demo base URL: https://sira-karmolab-tatuhin09.azurewebsites.net
+
+Base URL with the launcher: `http://127.0.0.1:8767`. The local entry point accepts matching localhost/127.0.0.1 Host values. The hosted WSGI entry point accepts only KARMOLAB_PUBLIC_HOST and matches POST Origin against its HTTPS URL. These are local application APIs, not public MCP tools.
 
 All POST endpoints require `Content-Type: application/json`, a JSON object, and a valid UUID `id`. Request bodies must be between 1 and 16,000 bytes. Origin, when supplied, must match the server origin. Answer, revision, and review-note text must be nonempty after trimming and at most 1,500 characters.
 
@@ -33,3 +35,5 @@ A finding includes `kind`, `quote`, `clause`, bilingual `explanation`, and the r
 Common errors: `400 invalid_request`, `403 invalid_host` or `invalid_origin`, `415 json_required`, and `404 not_found`. Missing or cross-session attempt updates are rejected. Raw provider errors and credentials are not exposed.
 
 Use the same submission ID for a retry of the same answer/case. Changing the answer requires a new ID. This prevents avoidable duplicate model requests; it does not make an in-memory browser draft durable until the request succeeds.
+
+The hosted entry point also provides `GET /healthz` returning a small training-demo status. It performs no model call and exposes no credentials.

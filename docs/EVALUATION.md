@@ -4,7 +4,7 @@
 
 Run `python3 -m unittest discover -s tests -v`. These tests use mocked provider responses or a temporary local server/database, never live model calls.
 
-The original eight model-adapter tests cover disabled AI, persisted call budgets, invalid quotes/clause mappings, valid structured output, connection-failure fallback, incomplete output, fabricated quote rejection, and exhausted budgets. HTTP tests additionally cover idempotent submissions, session isolation, saved revisions/reviews, and invalid-origin rejection. Test output is the current authority for counts.
+The original eight model-adapter tests cover disabled AI, persisted call budgets, invalid quotes/clause mappings, valid structured output, connection-failure fallback, incomplete output, fabricated quote rejection, and exhausted budgets. Three hosted-entry-point tests cover health/policy responses, secure cookies, host/origin boundaries, idempotence, persistence across app restart, input limits and inaccessible private paths. HTTP tests additionally cover idempotent submissions, session isolation, saved revisions/reviews, and invalid-origin rejection. Test output is the current authority for counts.
 
 `node --check dist/app.js` checks JavaScript syntax. CI is configured to run offline Python checks and this syntax check; a configured workflow is not evidence of a successful remote CI run until GitHub reports one.
 
@@ -37,3 +37,5 @@ There is no independently labelled Bangla test set, real learner pilot, measured
 ## Pilot plan
 
 Recruit consenting learners and trainers, agree on an actual organization's policy, and prepare independently labelled cases. Measure policy-compliant response rate, repeated errors on changed cases, and trainer review time. Include negation, already-provided evidence, missing information, ambiguous approval, and attempted instruction injection. Report denominators, failures and fallback frequency alongside any gains. Keep planned results separate from measured results.
+
+After adding the hosted entry point, all 14 offline tests passed locally with ResourceWarning checks enabled. No additional live Gemini experiments are part of this offline suite.

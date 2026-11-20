@@ -8,7 +8,13 @@ SIRA Karmolab is a working local prototype for **LearnSphere AI → SkillBridge*
 
 A trainee reads a fictional damaged-product complaint, writes a response, examines provisional policy-linked feedback, revises the response, and applies the lesson to a related case. Original work and trainer comments remain available in session-scoped history.
 
-> **Current status:** local prototype with an optional, tested Gemini integration. This repository is source code, not a hosted demo. There are no claims of independently measured learning gains or production readiness.
+> **Current status:** a training prototype with local and hosted WSGI entry points and an optional, tested Gemini integration. There are no claims of independently measured learning gains or production readiness.
+
+## Live demo
+
+**[https://sira-karmolab-tatuhin09.azurewebsites.net](https://sira-karmolab-tatuhin09.azurewebsites.net)**
+
+Hosted on Azure App Service Free (F1). Use fictional practice data. The free plan may sleep or reach shared quotas; the first visit can take longer. AI requests have a separate application-level daily cap, after which labelled local observations remain available.
 
 ## Why it exists
 
@@ -28,7 +34,7 @@ The initial customer segment is e-commerce onboarding and vocational training. A
 - SQLite persistence for responses, revisions, assessment snapshots, trainer notes, and verdicts.
 - Session-isolated history, duplicate-submission protection, and preserved drafts on request failure.
 
-**Not implemented:** separate learner/trainer accounts, organization policy uploads, a production dashboard, automatic learning from trainer corrections, fine-tuning, multi-agent orchestration, vector retrieval, or a publicly hosted deployment. The trainer controls shown in the prototype are not protected by a separate trainer role.
+**Not implemented:** separate learner/trainer accounts, organization policy uploads, a production dashboard, automatic learning from trainer corrections, fine-tuning, multi-agent orchestration, vector retrieval, or production account management. The trainer controls shown in the prototype are not protected by a separate trainer role.
 
 ## Quick start: no API key required
 
@@ -110,7 +116,9 @@ See [architecture](docs/ARCHITECTURE.md), [API details](docs/API.md), [evaluatio
 
 ```text
 start_local.py             Explicit local launcher and optional key-file reader
-run.py                     Loopback HTTP server and application API
+run.py                     Local loopback HTTP server and application API
+cloud_app.py               Flask WSGI entry point for the hosted training demo
+requirements.txt           Pinned Flask and Gunicorn dependencies
 assessment.py              Sample policy, cases, local cues and case selection
 ai_review.py               Gemini prompt, response schema, validator and budget
 store.py                   Session-scoped SQLite persistence
@@ -125,6 +133,7 @@ docs/                     Architecture, API and evaluation notes
 ## Tests
 
 ```bash
+python3 -m pip install -r requirements.txt
 python3 -m unittest discover -s tests -v
 ```
 
@@ -152,10 +161,16 @@ No blanket open-source licence is granted by this repository. Original-project a
 
 ## Roadmap and proposed pilot
 
-- Prepare a stable public demo with authentication, appropriate hosting, and provider capacity.
+- Strengthen the public training demo with account/role authentication and measured provider capacity.
 - Add separate trainer access and organization-specific policies and cases.
 - Build an independently labelled Bangla evaluation set, including negation and prompt-injection cases.
 - Pilot with real trainers and learners under an appropriate data policy.
 - Measure independently rated policy-compliant responses, repeated errors on changed cases, and trainer review time.
 
 These are planned activities, not reported outcomes. The repository link is evidence of implementation; a hosted demo and video remain separate submission items.
+
+## Azure training demo
+
+The hosted entry point is `cloud_app:app`, served by Gunicorn using `deployment/azure-startup.sh`. The Azure App Service uses a Free (F1) Linux plan and HTTPS. See [deployment notes](deployment/README.md) for configuration, persistence, and free-plan limits. The local `start_local.py` workflow remains available.
+
+Hosted-demo controls are for fictional practice, not verified trainer certification. A public URL does not make this a production learning-management system.

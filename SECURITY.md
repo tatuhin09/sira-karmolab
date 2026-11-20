@@ -1,6 +1,6 @@
 # Security and deployment boundaries
 
-This is a loopback-only training prototype, not a production internet service. Use fictional data. Do not expose this server publicly by changing the bind address or disabling Host checks without first designing authentication, trainer-role authorization, TLS, abuse controls, provider quotas, and a data policy.
+This is a training prototype with two entry points: a loopback-only local server and a hosted WSGI demo. It is not a production learning-management service. Use fictional data. Keep the local server private. The hosted demo uses a configured public-host allowlist, HTTPS-origin checks and secure cookies, but real institutional use still requires authentication, trainer-role authorization, TLS, abuse controls, provider quotas, and a data policy.
 
 ## Credentials
 

@@ -2,7 +2,7 @@
 
 ## Scope
 
-Karmolab is a local, request-driven training prototype. It serves the browser interface and its API from the same loopback Python HTTP server. It requires no background agent service, package installation, vector store, or local LLM.
+Karmolab is a local, request-driven training prototype. The local entry point serves the interface and API from a loopback Python HTTP server. The hosted entry point, cloud_app.py, uses Flask and a single Gunicorn worker with four threads, a configured public-host allowlist, secure cookies, and HTTPS-origin checks. It requires no background agent service, package installation, vector store, or local LLM.
 
 ## Components
 
@@ -32,4 +32,4 @@ SQLite stores the response and an assessment snapshot, including case message, p
 
 ## Limits
 
-The loopback server and exact Host checks deliberately prevent treating this as a ready-made internet service. Full account authentication, trainer-role authorization, organization isolation, TLS termination, backup/retention/deletion controls, production request scheduling and observability remain future work. The local session cookie is not proof of learner identity. No automatic model improvement occurs from stored trainer reviews.
+The local server remains loopback-only. The hosted entry point allows its configured public hostname and serves only dist assets, never source or runtime files. Azure uses persistent /home storage for SQLite. Full account authentication, trainer-role authorization, organization isolation, TLS termination, backup/retention/deletion controls, production request scheduling and observability remain future work. The local session cookie is not proof of learner identity. No automatic model improvement occurs from stored trainer reviews.
